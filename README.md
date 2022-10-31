@@ -2,7 +2,7 @@
 
 ## Description
 
-"Math magicians" is a website to manage ypur daily activities, you can: 
+"React Todo project" is a website to manage your daily activities, you can: 
 - add task
 - remove task
 - edit task
