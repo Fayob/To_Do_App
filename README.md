@@ -2,12 +2,17 @@
 
 ## Description
 
-"Math magicians" is a website to manage ypur daily activities, you can: 
+Todo is a website to manage your daily activities, you can: 
 - add task
 - remove task
 - edit task
 
 This project was based on learning React.
+
+## Built With
+
+- Major languages - Javascript
+- Frameworks - React
 
 # Getting Started with Create React App
 
