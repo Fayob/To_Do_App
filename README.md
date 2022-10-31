@@ -2,7 +2,7 @@
 
 ## Description
 
-Todo is a website to manage your daily activities, you can: 
+Todo app is a website to manage your daily activities, you can:
 - add task
 - remove task
 - edit task
