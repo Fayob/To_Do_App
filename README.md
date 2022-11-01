@@ -13,10 +13,10 @@ This project was based on learning React.
 
 - Major languages - Javascript
 - Frameworks - React
-
+<!-- 
 ## Live Demo
 
-[Checkout the app here](https://fayob.github.io/To_Do_App/public/)
+[Checkout the app here](https://fayob.github.io/To_Do_App/public/) -->
 
 # Getting Started with Create React App
 
