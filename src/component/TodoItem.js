@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Checkbox from "./checkboxInput";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import Checkbox from './checkboxInput';
 
-const TodoItem = ({ todo, checkboxHandler, removeHandler, setUpdate }) => {
+const TodoItem = ({
+  todo, checkboxHandler, removeHandler, setUpdate,
+}) => {
   const [state, setState] = useState({
     editing: false,
   });
   const completedStyle = {
-    fontStyle: "italic",
-    color: "#595959",
+    fontStyle: 'italic',
+    color: '#595959',
     opacity: 0.4,
-    textDecoration: "line-through",
+    textDecoration: 'line-through',
   };
 
   const handleEditing = () => {
@@ -18,26 +21,24 @@ const TodoItem = ({ todo, checkboxHandler, removeHandler, setUpdate }) => {
     });
   };
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   if (state.editing) {
-    viewMode.display = "none";
+    viewMode.display = 'none';
   } else {
-    editMode.display = "none";
+    editMode.display = 'none';
   }
 
   const handleUpdatedDone = (e) => {
-    if (e.key === "Enter") {
-    setState({ editing: false })
+    if (e.key === 'Enter') {
+      setState({ editing: false });
     }
-  }
+  };
 
-  useEffect(() => {
-    return () => {
-      console.log('cleaning up...');
-    }
-  }, [])
+  useEffect(() => () => {
+    console.log('cleaning up...');
+  }, []);
 
   return (
     <li className="item">
@@ -47,7 +48,7 @@ const TodoItem = ({ todo, checkboxHandler, removeHandler, setUpdate }) => {
           checkboxHandler={checkboxHandler}
           completed={todo.completed}
         />
-        <button onClick={() => removeHandler(todo.id)}>Delete</button>
+        <button type="button" onClick={() => removeHandler(todo.id)}>Delete</button>
         <span style={todo.completed ? completedStyle : null}>{todo.title}</span>
       </div>
       <input
@@ -62,6 +63,13 @@ const TodoItem = ({ todo, checkboxHandler, removeHandler, setUpdate }) => {
       />
     </li>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.string.isRequired,
+  checkboxHandler: PropTypes.func.isRequired,
+  removeHandler: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
